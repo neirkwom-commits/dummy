@@ -271,10 +271,18 @@
       max-width: 100%;
       font-size: 1.1rem;
     }
+    /* Modal fullscreen on mobile */
     .modal-content {
-      margin: 20% auto;
-      width: 90%;
-      padding: 25px 20px;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+      padding: 30px 20px;
+      box-sizing: border-box;
+      max-width: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 </style>
