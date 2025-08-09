@@ -145,7 +145,7 @@
     100% {transform: translateY(100%);}
   }
 
-  /* Modal base styles */
+  /* Modal styles */
   .modal {
     display: none; /* Hidden by default */
     position: fixed;
@@ -157,14 +157,10 @@
     overflow: auto;
     background-color: rgba(0,0,0,0.6);
     backdrop-filter: blur(5px);
-    align-items: center;
-    justify-content: center;
-  }
-  .modal.show {
-    display: flex;
   }
   .modal-content {
     background: #142a3a;
+    margin: 10% auto;
     padding: 30px 40px;
     border-radius: 12px;
     max-width: 400px;
@@ -172,9 +168,6 @@
     color: white;
     position: relative;
     animation: fadeInUp 0.4s ease forwards;
-    width: 90%;
-    max-width: 400px;
-    box-sizing: border-box;
   }
   .modal-content h2 {
     margin-top: 0;
@@ -189,11 +182,10 @@
     font-weight: 600;
   }
   .modal-content form {
-    width: 100%;
+    /* default full width */
   }
   .modal-content input[type="email"],
-  .modal-content input[type="password"],
-  .modal-content input[type="text"] {
+  .modal-content input[type="password"] {
     width: 100%;
     padding: 10px 14px;
     margin-bottom: 18px;
@@ -201,14 +193,11 @@
     border: none;
     outline: none;
     font-size: 15px;
-    box-sizing: border-box;
   }
   .modal-content input::placeholder {
     color: #999;
   }
-  .modal-content button.login-submit,
-  .modal-content button.reset-submit,
-  .modal-content button.register-submit {
+  .modal-content button.login-submit {
     background: #ffcb05;
     border: none;
     width: 100%;
@@ -221,9 +210,7 @@
     box-shadow: 0 5px 15px rgba(255,203,5,0.7);
     transition: background 0.3s ease;
   }
-  .modal-content button.login-submit:hover,
-  .modal-content button.reset-submit:hover,
-  .modal-content button.register-submit:hover {
+  .modal-content button.login-submit:hover {
     background: #f2a900;
   }
   .modal-content .forgot-register {
@@ -289,24 +276,24 @@
     }
     /* Modal fullscreen on mobile */
     .modal-content {
-      margin: 0 10px;
-      width: calc(100% - 20px);
-      height: auto;
-      border-radius: 12px;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
       padding: 30px 20px;
+      box-sizing: border-box;
       max-width: none;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: stretch;
+      align-items: center;
     }
     .modal-content form {
       width: 100%;
-      max-width: 100%;
+      max-width: 360px;
     }
     .modal-content input[type="email"],
-    .modal-content input[type="password"],
-    .modal-content input[type="text"] {
+    .modal-content input[type="password"] {
       max-width: 100%;
       width: 100%;
     }
@@ -320,75 +307,75 @@
   <button class="btn-login" id="openLoginBtn">Login</button>
 </header>
 
-<div class="hero-bg" aria-hidden="true">
+<div class="hero-bg">
   <div class="line"></div>
   <div class="line"></div>
   <div class="line"></div>
   <div class="line"></div>
 </div>
 
-<section class="hero" role="main">
+<section class="hero">
   <h1>Digital Smart Revise Technology</h1>
   <p>Menghadirkan solusi digital pintar untuk transformasi bisnis yang efisien dan inovatif.</p>
-  <button class="btn-primary" id="ctaLearnMore">Pelajari Lebih Lanjut</button>
+  <button class="btn-primary" onclick="alert('Fitur pelajari lebih lanjut akan dikembangkan')">Pelajari Lebih Lanjut</button>
 </section>
 
 <!-- Modal Login -->
 <div id="loginModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="loginTitle">
-  <div class="modal-content" role="document">
+  <div class="modal-content">
     <span class="close-btn" id="closeLoginBtn" aria-label="Close login form">&times;</span>
     <h2 id="loginTitle">Login ke DSRT</h2>
     <form id="loginForm">
-      <label for="emailLogin">Email</label>
-      <input type="email" id="emailLogin" name="email" placeholder="masukkan email" required autocomplete="username" />
-      <label for="passwordLogin">Password</label>
-      <input type="password" id="passwordLogin" name="password" placeholder="masukkan password" required autocomplete="current-password" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="masukkan email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="masukkan password" required />
       <button type="submit" class="login-submit">Login</button>
     </form>
     <div class="forgot-register">
       <a href="#" id="forgotPasswordLink">Forgot password?</a>
-      <button class="register-btn" id="openRegisterBtn">Register</button>
+      <button class="register-btn" id="registerBtn">Register</button>
     </div>
   </div>
 </div>
 
-<!-- Modal Forgot Password -->
-<div id="forgotModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="forgotTitle">
-  <div class="modal-content" role="document">
-    <span class="close-btn" id="closeForgotBtn" aria-label="Close forgot password form">&times;</span>
-    <h2 id="forgotTitle">Lupa Password</h2>
-    <form id="forgotForm">
-      <label for="emailForgot">Masukkan email untuk reset password</label>
-      <input type="email" id="emailForgot" name="email" placeholder="masukkan email" required autocomplete="email" />
-      <button type="submit" class="reset-submit">Reset Password</button>
-    </form>
-  </div>
-</div>
-
-<!-- Modal Register -->
-<div id="registerModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="registerTitle">
-  <div class="modal-content" role="document">
-    <span class="close-btn" id="closeRegisterBtn" aria-label="Close register form">&times;</span>
-    <h2 id="registerTitle">Register Akun Baru</h2>
-    <form id="registerForm">
-      <label for="emailRegister">Email</label>
-      <input type="email" id="emailRegister" name="email" placeholder="masukkan email" required autocomplete="email" />
-      <label for="passwordRegister">Password</label>
-      <input type="password" id="passwordRegister" name="password" placeholder="masukkan password" required autocomplete="new-password" />
-      <button type="submit" class="register-submit">Register</button>
-    </form>
-  </div>
-</div>
-
 <script>
-  // Modal elements
-  const loginModal = document.getElementById('loginModal');
-  const forgotModal = document.getElementById('forgotModal');
-  const registerModal = document.getElementById('registerModal');
+  const openBtn = document.getElementById('openLoginBtn');
+  const modal = document.getElementById('loginModal');
+  const closeBtn = document.getElementById('closeLoginBtn');
+  const loginForm = document.getElementById('loginForm');
+  const forgotLink = document.getElementById('forgotPasswordLink');
+  const registerBtn = document.getElementById('registerBtn');
 
-  // Buttons
-  const openLoginBtn = document.getElementById('openLoginBtn');
-  const closeLoginBtn = document.getElementById('closeLoginBtn');
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'block';
+    modal.setAttribute('aria-hidden', 'false');
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+  });
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+    }
+  });
 
-  const forgotPasswordLink = document.getElementById('forgotPasswordLink');
-  const closeForgotBtn = document.get
+  loginForm.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Login functionality belum tersedia');
+  });
+
+  forgotLink.addEventListener('click', e => {
+    e.preventDefault();
+    alert('Fitur lupa password akan dikembangkan');
+  });
+
+  registerBtn.addEventListener('click', () => {
+    alert('Fitur registrasi akan dikembangkan');
+  });
+</script>
+
+</body>
+</html>
