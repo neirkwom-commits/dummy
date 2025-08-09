@@ -1,67 +1,184 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BrandSaya - Landing Page</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DSRT - Digital Smart Revise Technology</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+  body, html {
+    margin: 0; padding: 0; height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background: #0f2027;  /* dark gradient background */
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+  }
+  header .logo {
+    font-weight: 900;
+    font-size: 24px;
+    letter-spacing: 2px;
+    color: #00ffd5;
+    cursor: default;
+  }
+  nav a {
+    color: #00ffd5;
+    margin-left: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  nav a:hover {
+    color: #ffcb05;
+  }
+  .hero {
+    height: 100vh;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+    text-align: left;
+  }
+  .hero h1 {
+    font-size: 3.8rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    color: #00ffd5;
+    animation: fadeInDown 1s ease forwards;
+  }
+  .hero p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    color: #cde9e9;
+    max-width: 600px;
+    animation: fadeInUp 1.2s ease forwards;
+  }
+  .btn-primary {
+    background: #ffcb05;
+    color: #000;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    width: fit-content;
+    box-shadow: 0 5px 15px rgba(255,203,5,0.6);
+    transition: background 0.3s ease;
+    animation: fadeInUp 1.5s ease forwards;
+  }
+  .btn-primary:hover {
+    background: #f2a900;
+  }
+
+  /* Animations */
+  @keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-40px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(40px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Animated background tech lines */
+  .hero-bg {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .line {
+    position: absolute;
+    background: rgba(0, 255, 213, 0.3);
+    width: 2px;
+    animation: moveLine 6s linear infinite;
+  }
+  .line:nth-child(1) {
+    height: 120vh;
+    left: 20%;
+    animation-delay: 0s;
+  }
+  .line:nth-child(2) {
+    height: 100vh;
+    left: 40%;
+    animation-delay: 2s;
+  }
+  .line:nth-child(3) {
+    height: 140vh;
+    left: 60%;
+    animation-delay: 4s;
+  }
+  .line:nth-child(4) {
+    height: 110vh;
+    left: 80%;
+    animation-delay: 1s;
+  }
+  @keyframes moveLine {
+    0% {transform: translateY(-100%);}
+    100% {transform: translateY(100%);}
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    header {
+      padding: 15px 20px;
+    }
+    .hero {
+      padding: 0 20px;
+      text-align: center;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      max-width: 100%;
+    }
+  }
+
+</style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">BrandSaya</h1>
-      <nav>
-        <a href="#tentang">Tentang</a>
-        <a href="#layanan">Layanan</a>
-        <a href="#kontak">Kontak</a>
-        <a href="dashboard.html" class="btn-primary">Dashboard</a>
-      </nav>
-    </div>
-  </header>
 
-  <section class="hero" id="home">
-    <div class="container">
-      <h2>Solusi Web dan Dashboard Profesional</h2>
-      <p>Buat website dan dashboard dengan mudah dan cepat. Semua fitur siap pakai!</p>
-      <a href="dashboard.html" class="btn-primary">Masuk Dashboard</a>
-    </div>
-  </section>
+<header>
+  <div class="logo">DSRT</div>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Features</a>
+    <a href="#">Demo</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
 
-  <section id="tentang" class="section">
-    <div class="container">
-      <h2>Tentang Kami</h2>
-      <p>Kami menyediakan layanan pembuatan website dan dashboard custom sesuai kebutuhan bisnis Anda.</p>
-    </div>
-  </section>
+<div class="hero-bg">
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+  <div class="line"></div>
+</div>
 
-  <section id="layanan" class="section">
-    <div class="container">
-      <h2>Layanan Kami</h2>
-      <ul>
-        <li>Landing Page profesional</li>
-        <li>Dashboard interaktif dan mudah digunakan</li>
-        <li>Integrasi backend seperti Supabase dan lain-lain</li>
-      </ul>
-    </div>
-  </section>
+<section class="hero">
+  <h1>Digital Smart Revise Technology</h1>
+  <p>Transformasi pintar untuk bisnis Anda dengan teknologi digital terdepan yang mengutamakan efisiensi dan inovasi.</p>
+  <button class="btn-primary">Pelajari Lebih Lanjut</button>
+</section>
 
-  <section id="kontak" class="section">
-    <div class="container">
-      <h2>Kontak</h2>
-      <form>
-        <label for="name">Nama:</label>
-        <input id="name" type="text" placeholder="Nama Anda" required />
-        <label for="email">Email:</label>
-        <input id="email" type="email" placeholder="Email Anda" required />
-        <label for="message">Pesan:</label>
-        <textarea id="message" placeholder="Tulis pesan Anda..." required></textarea>
-        <button type="submit">Kirim</button>
-      </form>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>© 2025 BrandSaya. Semua hak cipta dilindungi.</p>
-  </footer>
 </body>
 </html>
