@@ -9,7 +9,6 @@
   body, html {
     margin: 0; padding: 0; height: 100%;
     font-family: 'Roboto', sans-serif;
-    background: #0f2027;  /* dark gradient background */
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     color: white;
   }
@@ -41,6 +40,22 @@
   nav a:hover {
     color: #ffcb05;
   }
+  .btn-login {
+    background: transparent;
+    border: 2px solid #00ffd5;
+    color: #00ffd5;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 30px;
+  }
+  .btn-login:hover {
+    background: #00ffd5;
+    color: #000;
+  }
+
   .hero {
     height: 100vh;
     padding: 0 50px;
@@ -50,6 +65,8 @@
     max-width: 1200px;
     margin: auto;
     text-align: left;
+    position: relative;
+    z-index: 1;
   }
   .hero h1 {
     font-size: 3.8rem;
@@ -151,8 +168,14 @@
     .hero p {
       max-width: 100%;
     }
+    nav a, .btn-login {
+      margin-left: 15px;
+      font-size: 14px;
+    }
+    .btn-login {
+      padding: 6px 14px;
+    }
   }
-
 </style>
 </head>
 <body>
@@ -160,10 +183,11 @@
 <header>
   <div class="logo">DSRT</div>
   <nav>
-    <a href="#">Home</a>
-    <a href="#">Features</a>
-    <a href="#">Demo</a>
-    <a href="#">Contact</a>
+    <a href="#">Beranda</a>
+    <a href="#">Fitur</a>
+    <a href="#">Layanan</a>
+    <a href="#">Kontak</a>
+    <button class="btn-login" onclick="alert('Fitur Login akan dikembangkan')">Login</button>
   </nav>
 </header>
 
@@ -176,7 +200,7 @@
 
 <section class="hero">
   <h1>Digital Smart Revise Technology</h1>
-  <p>Transformasi pintar untuk bisnis Anda dengan teknologi digital terdepan yang mengutamakan efisiensi dan inovasi.</p>
+  <p>Menghadirkan solusi digital pintar untuk transformasi bisnis yang efisien dan inovatif.</p>
   <button class="btn-primary">Pelajari Lebih Lanjut</button>
 </section>
 
