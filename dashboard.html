@@ -1,63 +1,70 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard Dummy</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dashboard - BrandSaya</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <h1 class="logo">Brand Saya</h1>
-    <nav>
-      <a href="index.html">🏠 Home</a>
-      <a href="#" class="active">📊 Dashboard</a>
-      <a href="#">⚙️ Pengaturan</a>
-    </nav>
-  </header>
+  <div class="dashboard-wrapper">
+    <aside class="sidebar">
+      <div class="logo">BrandSaya</div>
+      <nav>
+        <a href="#" class="active" data-page="dashboard-home">Beranda</a>
+        <a href="#" data-page="fitur-1">Fitur 1</a>
+        <a href="#" data-page="fitur-2">Fitur 2</a>
+        <a href="#" data-page="pengaturan">Pengaturan</a>
+        <a href="#" class="logout">Logout</a>
+      </nav>
+    </aside>
+    <main class="dashboard-content">
+      <header>
+        <h1 id="page-title">Beranda</h1>
+      </header>
 
-  <main class="container">
-    <section class="stats">
-      <div class="card">
-        <h3>Total Pengguna</h3>
-        <p>120</p>
-      </div>
-      <div class="card">
-        <h3>Pesanan Baru</h3>
-        <p>35</p>
-      </div>
-      <div class="card">
-        <h3>Pendapatan</h3>
-        <p>Rp 12.500.000</p>
-      </div>
-    </section>
+      <section id="dashboard-home" class="page active">
+        <div class="stats-cards">
+          <div class="card">
+            <h3>Pengguna Aktif</h3>
+            <p>1200</p>
+          </div>
+          <div class="card">
+            <h3>Pesanan</h3>
+            <p>345</p>
+          </div>
+          <div class="card">
+            <h3>Feedback</h3>
+            <p>89</p>
+          </div>
+        </div>
+        <p>Selamat datang di dashboard BrandSaya. Semua fitur masih dummy dan akan diaktifkan nanti.</p>
+      </section>
 
-    <section class="table-section">
-      <h2>Data Pelanggan (Dummy)</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Nama</th>
-            <th>Email</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Contoh User</td>
-            <td>contoh@email.com</td>
-            <td>Aktif</td>
-          </tr>
-          <tr>
-            <td>User Kedua</td>
-            <td>user2@email.com</td>
-            <td>Nonaktif</td>
-          </tr>
-        </tbody>
-      </table>
-      <button onclick="showAlert()">Tambah Data</button>
-    </section>
-  </main>
+      <section id="fitur-1" class="page">
+        <h2>Fitur 1</h2>
+        <p>Ini adalah fitur 1. Tombol di bawah ini dummy, klik untuk alert.</p>
+        <button onclick="showAlert()">Klik Saya</button>
+      </section>
+
+      <section id="fitur-2" class="page">
+        <h2>Fitur 2</h2>
+        <p>Ini adalah fitur 2. Tombol di bawah ini dummy, klik untuk alert.</p>
+        <button onclick="showAlert()">Klik Saya</button>
+      </section>
+
+      <section id="pengaturan" class="page">
+        <h2>Pengaturan</h2>
+        <form>
+          <label for="username">Username:</label>
+          <input id="username" type="text" placeholder="Username" />
+          <label for="email">Email:</label>
+          <input id="email" type="email" placeholder="Email" />
+          <button type="submit">Simpan</button>
+        </form>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
