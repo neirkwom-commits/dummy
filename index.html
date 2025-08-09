@@ -16,49 +16,88 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
-    background: rgba(0,0,0,0.4);
+    padding: 15px 40px;
+    background: rgba(0,0,0,0.5);
     position: fixed;
     width: 100%;
     top: 0;
-    z-index: 10;
+    z-index: 20;
+    box-sizing: border-box;
   }
-  header .logo {
+  .logo {
     font-weight: 900;
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-size: 26px;
+    letter-spacing: 3px;
     color: #00ffd5;
-    cursor: default;
+    user-select: none;
   }
-  nav a {
+  .login-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .login-form input[type="email"],
+  .login-form input[type="password"] {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    outline: none;
+    width: 160px;
+  }
+  .login-form input::placeholder {
+    color: #888;
+  }
+  .login-form button {
+    background: #ffcb05;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #000;
+    box-shadow: 0 4px 12px rgba(255,203,5,0.6);
+    transition: background 0.3s ease;
+  }
+  .login-form button:hover {
+    background: #f2a900;
+  }
+  .login-extra {
+    display: flex;
+    flex-direction: column;
+    margin-left: 12px;
+    font-size: 13px;
+    user-select: none;
+  }
+  .login-extra a {
     color: #00ffd5;
-    margin-left: 30px;
     text-decoration: none;
-    font-weight: 500;
+    margin-bottom: 4px;
     transition: color 0.3s ease;
   }
-  nav a:hover {
+  .login-extra a:hover {
     color: #ffcb05;
   }
-  .btn-login {
+  .register-btn {
     background: transparent;
     border: 2px solid #00ffd5;
     color: #00ffd5;
-    padding: 8px 18px;
+    padding: 6px 14px;
     border-radius: 30px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: 30px;
+    margin-top: 6px;
+    width: fit-content;
   }
-  .btn-login:hover {
+  .register-btn:hover {
     background: #00ffd5;
     color: #000;
   }
 
   .hero {
     height: 100vh;
-    padding: 0 50px;
+    padding: 0 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,6 +106,7 @@
     text-align: left;
     position: relative;
     z-index: 1;
+    margin-top: 80px;
   }
   .hero h1 {
     font-size: 3.8rem;
@@ -153,27 +193,48 @@
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     header {
+      flex-wrap: wrap;
       padding: 15px 20px;
+      gap: 12px;
+    }
+    .login-form {
+      width: 100%;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .login-form input[type="email"],
+    .login-form input[type="password"] {
+      width: 140px;
+      font-size: 13px;
+      padding: 6px 10px;
+    }
+    .login-extra {
+      flex-direction: row;
+      align-items: center;
+      margin-left: 0;
+      font-size: 12px;
+      gap: 12px;
+      margin-top: 0;
+    }
+    .register-btn {
+      margin-top: 0;
+      padding: 6px 14px;
+      font-size: 12px;
     }
     .hero {
+      margin-top: 120px;
       padding: 0 20px;
       text-align: center;
-      align-items: center;
+      max-width: 100%;
     }
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.6rem;
     }
     .hero p {
       max-width: 100%;
-    }
-    nav a, .btn-login {
-      margin-left: 15px;
-      font-size: 14px;
-    }
-    .btn-login {
-      padding: 6px 14px;
     }
   }
 </style>
@@ -182,13 +243,15 @@
 
 <header>
   <div class="logo">DSRT</div>
-  <nav>
-    <a href="#">Beranda</a>
-    <a href="#">Fitur</a>
-    <a href="#">Layanan</a>
-    <a href="#">Kontak</a>
-    <button class="btn-login" onclick="alert('Fitur Login akan dikembangkan')">Login</button>
-  </nav>
+  <form class="login-form" onsubmit="event.preventDefault(); alert('Login functionality belum tersedia');">
+    <input type="email" placeholder="Email" required />
+    <input type="password" placeholder="Password" required />
+    <button type="submit">Login</button>
+    <div class="login-extra">
+      <a href="#" onclick="alert('Fitur lupa password akan dikembangkan'); return false;">Forgot password?</a>
+      <button type="button" class="register-btn" onclick="alert('Fitur registrasi akan dikembangkan');">Register</button>
+    </div>
+  </form>
 </header>
 
 <div class="hero-bg">
@@ -201,7 +264,7 @@
 <section class="hero">
   <h1>Digital Smart Revise Technology</h1>
   <p>Menghadirkan solusi digital pintar untuk transformasi bisnis yang efisien dan inovatif.</p>
-  <button class="btn-primary">Pelajari Lebih Lanjut</button>
+  <button class="btn-primary" onclick="alert('Pelajari lebih lanjut akan dikembangkan');">Pelajari Lebih Lanjut</button>
 </section>
 
 </body>
