@@ -142,6 +142,52 @@
     background: #f2a900;
   }
 
+  /* Fitur Unggulan */
+  section.features {
+    max-width: 1200px;
+    margin: 40px auto 60px;
+    padding: 0 20px;
+  }
+  section.features h2 {
+    text-align: center;
+    color: #00ffd5;
+    font-weight: 900;
+    font-size: 2rem;
+    margin-bottom: 24px;
+  }
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 24px;
+  }
+  .feature-item {
+    background: rgba(0,255,213,0.1);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+  }
+  .feature-icon {
+    font-size: 48px;
+    color: #00ffd5;
+    margin-bottom: 12px;
+  }
+  .feature-item h3 {
+    color: #00ffd5;
+    margin-bottom: 8px;
+  }
+  .feature-item p {
+    color: #cde9e9;
+  }
+
+  /* Footer */
+  footer {
+    background: #001f27;
+    color: #00ffd5;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: 700;
+  }
+
   /* Modal styles */
   .modal {
     display: none; /* Hidden by default */
@@ -333,6 +379,36 @@
   <p>Menghadirkan solusi digital pintar untuk transformasi bisnis yang efisien dan inovatif.</p>
   <button class="btn-primary" onclick="alert('Fitur pelajari lebih lanjut akan dikembangkan')">Coba Sekarang</button>
 </section>
+
+<section class="features" aria-label="Fitur Unggulan DSRT">
+  <h2>Fitur Unggulan Kami</h2>
+  <div class="features-grid">
+    <div class="feature-item">
+      <div class="feature-icon">⚙️</div>
+      <h3>Otomatisasi Cerdas</h3>
+      <p>Mempermudah proses bisnis dengan teknologi AI yang otomatis dan efisien.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">🔒</div>
+      <h3>Keamanan Tinggi</h3>
+      <p>Data dan privasi Anda dijaga dengan standar keamanan terbaik.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">⚡</div>
+      <h3>Performa Cepat</h3>
+      <p>Respon sistem yang cepat dan stabil untuk kelancaran operasional.</p>
+    </div>
+    <div class="feature-item">
+      <div class="feature-icon">📈</div>
+      <h3>Analitik Mendalam</h3>
+      <p>Insight bisnis yang akurat untuk pengambilan keputusan yang tepat.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 DSRT - Digital Smart Revise Technology. All rights reserved.
+</footer>
 
 <!-- Modal Login -->
 <div id="loginModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="loginTitle">
