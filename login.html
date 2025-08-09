@@ -1,123 +1,49 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Register - DSRT</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-  body, html {
-    margin: 0; padding: 0; height: 100%;
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .register-container {
-    background: #142a3a;
-    padding: 40px 50px;
-    border-radius: 12px;
-    width: 90%;
-    max-width: 400px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
-    box-sizing: border-box;
-  }
-  h2 {
-    margin: 0 0 24px 0;
-    color: #00ffd5;
-    font-weight: 900;
-    text-align: center;
-  }
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-  }
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%;
-    padding: 12px 14px;
-    margin-bottom: 20px;
-    border-radius: 6px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    box-shadow: inset 0 0 0 1px white;
-    transition: box-shadow 0.3s ease;
-    color: #fff;
-    background: transparent;
-  }
-  input::placeholder {
-    color: #999;
-  }
-  input:focus {
-    outline: 2px solid #00ffd5;
-    box-shadow: 0 0 8px #00ffd5;
-  }
-  button.register-submit {
-    width: 100%;
-    padding: 14px 0;
-    font-weight: 700;
-    font-size: 16px;
-    border-radius: 30px;
-    border: none;
-    background: #ffcb05;
-    color: #000;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(255,203,5,0.7);
-    transition: background 0.3s ease;
-  }
-  button.register-submit:hover {
-    background: #f2a900;
-  }
-  .login-link {
-    margin-top: 20px;
-    text-align: center;
-    font-size: 14px;
-  }
-  .login-link a {
-    color: #00ffd5;
-    font-weight: 700;
-    text-decoration: none;
-    cursor: pointer;
-    border: 2px solid #00ffd5;
-    padding: 6px 14px;
-    border-radius: 30px;
-    transition: all 0.3s ease;
-  }
-  .login-link a:hover {
-    background: #00ffd5;
-    color: #000;
-  }
-</style>
-</head>
-<body>
-  <div class="register-container" role="main" aria-label="Form Registrasi DSRT">
-    <h2>Register Akun DSRT</h2>
-    <form id="registerForm">
-      <label for="username">Username</label>
-      <input type="text" id="username" name="username" placeholder="masukkan username" required autocomplete="username" />
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="masukkan email" required autocomplete="email" />
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password" placeholder="masukkan password" required autocomplete="new-password" />
-      <button type="submit" class="register-submit">Register</button>
-    </form>
-    <div class="login-link">
-      Sudah punya akun? <a href="login.html">Login di sini</a>
+<html>
+  <head> ... style, meta, judul ... </head>
+  <body>
+    <header>        <-- Bagian atas halaman (logo + tombol login)
+      <div class="logo">DSRT</div>
+      <button class="btn-login">Login</button>
+    </header>
+
+    <div class="hero-bg"> ... animasi garis vertikal ... </div>
+
+    <section class="hero">   <-- Bagian utama intro landing page
+      <div class="short-logo">DSRT</div>
+      <h1>Judul besar</h1>
+      <p>Deskripsi singkat</p>
+      <button class="btn-primary">Coba Sekarang</button>
+    </section>
+
+    <section class="features">  <-- Bagian fitur unggulan
+      <h2>Fitur Unggulan Kami</h2>
+      <div class="features-grid">
+        <div class="feature-item feature-3d-button">⚙️ Otomatisasi Cerdas</div>
+        <div class="feature-item feature-3d-button">🔒 Keamanan Tinggi</div>
+        <div class="feature-item feature-3d-button">⚡ Performa Cepat</div>
+        <div class="feature-item feature-3d-button">📈 Analitik Mendalam</div>
+      </div>
+    </section>
+
+    <footer> ... copyright ... </footer>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Login ke DSRT</h2>
+        <form id="loginForm">
+          <label>Email</label>
+          <input type="email" required />
+          <label>Password</label>
+          <input type="password" required />
+          <button type="submit">Login</button>
+        </form>
+        <div class="forgot-register">
+          <a href="#">Forgot password?</a>
+          <button>Register</button>
+        </div>
+      </div>
     </div>
-  </div>
-
-  <script>
-    const registerForm = document.getElementById('registerForm');
-
-    registerForm.addEventListener('submit', e => {
-      e.preventDefault();
-      alert('Fitur registrasi belum tersedia');
-    });
-  </script>
-</body>
+  </body>
 </html>
