@@ -263,20 +263,28 @@
   .forgot-register {
     margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     font-size: 14px;
     user-select: none;
+    gap: 12px;
   }
   .forgot-register a {
+    border: 2px solid #00ffd5;
+    padding: 6px 16px;
+    border-radius: 30px;
+    font-weight: 700;
     color: #00ffd5;
-    font-weight: 600;
     text-decoration: none;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
   }
   .forgot-register a:hover {
-    color: #ffcb05;
+    background: #00ffd5;
+    color: #000;
   }
   .register-btn {
     background: transparent;
@@ -287,6 +295,7 @@
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s ease;
+    white-space: nowrap;
   }
   .register-btn:hover {
     background: #00ffd5;
